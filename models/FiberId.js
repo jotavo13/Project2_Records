@@ -1,5 +1,5 @@
 const {mongoose} = require("../db/connection");
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
 const fiberIdSchema = new Schema({
     fiberID: String, 
