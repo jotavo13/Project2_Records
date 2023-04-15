@@ -5,7 +5,6 @@ const router = express.Router();
 
 // Post
 router.post('/', async (req, res) => {
-	console.log(req.body)
 	req.body.isItWorknig = req.body.isItWorknig === 'on' ? true : false;
 	const fiber = await Fiber.create(req.body);
 	res.redirect('/fibers');
@@ -25,8 +24,8 @@ router.get('/new', (req, res) => {
    
 // Index...show all fiber
     router.get('/', async (req, res) => {
-        const fiber = await Fiber.find({});
-        res.render("fibers/index.ejs", {fiber});
+        const fibers = await Fiber.find({});
+        res.render("fibers/index.ejs", {fibers});
     });
    
     // Show...show one fiber

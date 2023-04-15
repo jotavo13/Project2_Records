@@ -18,8 +18,8 @@ app.set('view engine', 'ejs');
 
 
 // Controller
-const fiberController = require('./controller/fiber.js');
-app.use('/fiber', fiberController);
+const fiberController = require('./controller/fibers.js');
+app.use('/fibers', fiberController);
 
 
 
