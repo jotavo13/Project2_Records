@@ -1,42 +1,31 @@
+// Dependencies
 require('dotenv').config();
-const express = require("express");
+const express = require('express');
+const morgan = require('morgan'); 
+const methodOverride = require('method-override');
 const app = express();
-const {mongoose} = require("mongoose");
-const methodOverride = require("method-override");
-const { PORT, DATABASE_URL } = require("./config.js");
+
+
+
+/////////////////////////////////////////////////////
+// Middleware  req => middleware => res
+/////////////////////////////////////////////////////
+app.use(morgan("tiny")) //logging// 
+app.use(methodOverride("_method")) // override for put and delete requests from forms
+app.use(express.urlencoded({extended: true})) // parse urlencoded request bodies
+app.use(express.static("public")) // serve files from public statically
+app.set('view engine', 'ejs');
+
 
 // Controller
-const fiberIdController = require('./controller/fiber.js');
+const fiberController = require('./controller/fiber.js');
+app.use('/fiber', fiberController);
 
-// Models - Database stuf
 
-const Fiber = require("./models/Fiber.js")
-
-// controllers - routes
-// views - EJS files (EJS is literally just HTML and JS)
-
-// Middleware req -> middleware -> res
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended:false }));
-app.use(express.json()); //parse JSON data in the request body
-app.use(methodOverride('_method'))
-app.use(express.static("public")) // serve files from public statically
-// without urlencoded we get req.body undefined
-
-app.use((req,res,next) => {
-    console.log('this is my own middleware')
-    // middleware does something
-    // next tells server to do the next thing in the cycle
-    next()
-})
 
 app.get('/', (req, res) => {
     res.render('default route');
 })
-
-
-const fiberController = require('./controllers/fiber');
-app.use('/fiber', fiberController);
 
 // Listener
 app.listen(process.env.PORT, () =>

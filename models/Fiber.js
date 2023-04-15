@@ -1,4 +1,4 @@
-const {mongoose} = require("../db/connection");
+const { mongoose } = require("../db/connection");
 // const Schema = mongoose.Schema;
 
 const fiberSchema = new mongoose.Schema({
@@ -15,4 +15,4 @@ const fiberSchema = new mongoose.Schema({
 
 const Fiber = mongoose.model("Fiber", fiberSchema);
 
-module.exports = Fiber;
+module.exports = Fiber
