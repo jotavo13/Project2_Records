@@ -1,14 +1,16 @@
-ss = require('express');
+require('dotenv').config();
+const express = require("express");
 const app = express();
-const port = 4000
-const methodOverride = require('method-override')
+const {mongoose} = require("mongoose");
+const methodOverride = require("method-override");
+const { PORT, DATABASE_URL } = require("./config.js");
+
 // Controller
-const aaaaaaaaaaaaController = require('./controllers/aaaaaaaaaaaa');
+const fiberIdController = require('./controllers/fiberId');
 
-// Models - Database stuff
-const models = require('./models/AAAAAAAAAAA');
+// Models - Database stuf
 
-const aaaaaaaaaaaa = models.aaaaaaaaaaaa
+const FiberId = require("./models/FiberId.js")
 
 // controllers - routes
 // views - EJS files (EJS is literally just HTML and JS)
@@ -27,20 +29,11 @@ app.use((req,res,next) => {
     next()
 })
 
-
-// Routes
-// Hungry for more to create my own API, and APIs always should be in JSON
-app.get('/api', (req, res) => {
-    res.json({
-        models,
-        status: 200
-    })
-})
-
 app.get('/', (req, res) => {
     res.render('home.ejs');
-}
-app.use('/aaaaaaaaaaaa', aaaaaaaaaaaaController);
+})
+
+app.use('/fiberId', fiberIdController);
 
 app.get('/*', (req, res) => {
     res.render("404.ejs")
@@ -49,4 +42,5 @@ app.get('/*', (req, res) => {
 // Listen at the bottom
 app.listen(port, () => {
     console.log(`🏝️ Server is listening to PORT ${port} 🎧`)
+    
 })
