@@ -24,7 +24,7 @@ app.use('/fiber', fiberController);
 
 
 app.get('/', (req, res) => {
-    res.render('default route');
+    res.send('default route');
 })
 
 // Listener

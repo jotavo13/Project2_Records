@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <!-- add main element -->
+            <main>
+                <!-- add div -->
+                 <div>   
+                    <a href="/fiber/new"><button>Create A New Fruit</button></a>
+                    <!-- loop over fruits array uin for of -->
+                    <% for (fiber of fibers) { %>
+                        <!-- create an article -->
+                        <article>
+                            <a href="/fibers/<%= fiber._id %>">
+                                <h2>
+                                    <%= fiber.fiberID %> - <%= fiber.isItWorking ? "Working" : "Not Working" %>
+                                </h2>
+                            </a>
+                        </article>
+
+                        <% } %>
+                </div>
+            </main>
+    </body>
+
+</html>

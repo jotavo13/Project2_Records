@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+            <main>
+                <div>
+                    <form action="/fibers" method="post">
+                        <fieldset>
+                            <legend>Create a New FiberLocation</legend>
+                            <label>
+                                NAME:<input type="text" name="name" placeholder="enter fruit name" />
+                            </label>
+                            <label>
+                                COLOR:<input type="text" name="color" placeholder="enter fruit color" />
+                            </label>
+                            <label>
+                                Is It Working:<input type="checkbox" name="isItWorking" />
+                            </label>
+                        </fieldset>
+                        <input type="submit" value="create new fiberID" />
+                    </form>
+                </div>
+            </main>
+    </body>
+
+</html>
