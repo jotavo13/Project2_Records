@@ -6,11 +6,11 @@ const methodOverride = require("method-override");
 const { PORT, DATABASE_URL } = require("./config.js");
 
 // Controller
-const fiberIdController = require('./controllers/fiberId');
+const fiberIdController = require('./controller/fiber.js');
 
 // Models - Database stuf
 
-const FiberId = require("./models/FiberId.js")
+const Fiber = require("./models/Fiber.js")
 
 // controllers - routes
 // views - EJS files (EJS is literally just HTML and JS)
@@ -20,6 +20,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended:false }));
 app.use(express.json()); //parse JSON data in the request body
 app.use(methodOverride('_method'))
+app.use(express.static("public")) // serve files from public statically
 // without urlencoded we get req.body undefined
 
 app.use((req,res,next) => {
@@ -30,17 +31,14 @@ app.use((req,res,next) => {
 })
 
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.render('default route');
 })
 
-app.use('/fiberId', fiberIdController);
 
-app.get('/*', (req, res) => {
-    res.render("404.ejs")
-})
+const fiberController = require('./controllers/fiber');
+app.use('/fiber', fiberController);
 
-// Listen at the bottom
-app.listen(port, () => {
-    console.log(`🏝️ Server is listening to PORT ${port} 🎧`)
-    
-})
+// Listener
+app.listen(process.env.PORT, () =>
+	console.log(`express is listening on port: ${process.env.PORT}`)
+);

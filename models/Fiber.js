@@ -1,7 +1,7 @@
 const {mongoose} = require("../db/connection");
 // const Schema = mongoose.Schema;
 
-const fiberIdSchema = new Schema({
+const fiberSchema = new mongoose.Schema({
     fiberID: String, 
     DeviceA: String,
     TypeOfConnectorOfA: String,
@@ -10,8 +10,9 @@ const fiberIdSchema = new Schema({
     DeviceB: String,
     TypeOfConnectorOfB: String,
     locationOfDeviceB:String,
-})
+    isItWorknig: Boolean
+}, {timestamps: true})
 
-const FiberId = mongoose.model("FiberId", fiberIdSchema);
+const Fiber = mongoose.model("Fiber", fiberSchema);
 
-module.exports = FiberId;
+module.exports = Fiber;
