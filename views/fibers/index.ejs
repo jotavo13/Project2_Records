@@ -5,18 +5,28 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-                 <div>   
-                    <a href="/fibers/new"><button>Create A New fiberID</button></a>
-                    <% for (fiber of fibers) { %>
-                        <article>
-                            <a href="/fibers/<%= fiber._id %>">
-                                <h2> 
-                                    <%= fiber.fiberID %> - <%= fiber.isItWorking ? "Usable" : "Already In Used" %>
-                                </h2>
-                            </a>
-                        </article>
 
-                        <% } %>
+
+
+                <div class="container-fluid"> 
+                    <div class="container text-center">
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <a href="/fibers/new"><button>Create A New fiberID</button></a>
+                             <% for (fiber of fibers) { %>
+                                 <article>
+                                    <a href="/fibers/<%= fiber._id %>">
+                           
+                                         <h2> 
+                                              <%= fiber.fiberID %> - <%= fiber.isItWorking ? "Usable" : "Already In Used" %>
+                                         </h2>
+                                     </a>
+                                 </article>
+
+                             <% } %>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
     </body>
