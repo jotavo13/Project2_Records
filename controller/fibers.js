@@ -3,6 +3,12 @@ const Fiber  = require('../models/Fiber');
 const router = express.Router();
 
 
+// Summary
+router.get('/summary', (req, res) => {
+ res.render('fibers/summary.ejs')
+})
+
+
 // New
 router.get('/new', (req, res) => {
     res.render("fibers/new.ejs")
