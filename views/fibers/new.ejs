@@ -10,17 +10,49 @@
                         <fieldset>
                             <legend>Create a New FiberLocation</legend>
                             <label>
-                                NAME:<input type="text" name="name" placeholder="enter fruit name" />
+                                FiberID:<input type="text" na="FiberID" placeholder="Enter the new FiberID" />
                             </label>
+                                    <br>
                             <label>
-                                COLOR:<input type="text" name="color" placeholder="enter fruit color" />
+                                TypeOfFiber:<input type="text" name="TypeOfFiber" placeholder="Is the Fiber Single or Multimode" />
                             </label>
+                                    <br>
                             <label>
                                 Is It Working:<input type="checkbox" name="isItWorking" />
                             </label>
+                                    <br>
+                            <label>
+                                DeviceA:<input type="text" name="DeviceA" placeholder="Enter the Device where the fiber start" />
+                            </label>
+                                    <br>
+                            <label>
+                                Img:<input type="text" placeholder="ImageURL" name="img" id="img">
+                            </label>
+                                    <br>
+                            <label>
+                                TypeOfConnectorOfA:<input type="text" na="TypeOfConnectorOfA" placeholder="LC/SC/ST of the FIU" />
+                            </label>
+                                    <br>
+                            <label>
+                                locationOfDeviceA:<input type="text" name="locationOfDeviceA" placeholder="Enter the Location of the Start Device" />
+                            </label>
+                                    <br>
+                            <label>
+                                DeviceB:<input type="text" name="DeviceB" placeholder="Enter the Device where the fiber ends" />
+                            </label>
+                                    <br>
+                            <label>
+                                TypeOfConnectorOfB:<input type="text" na="TypeOfConnectorOfB" placeholder="LC/SC/ST of the FIU" />
+                            </label>
+                                    <br>
+                            <label>
+                                locationOfDeviceB:<input type="text" name="locationOfDeviceA" placeholder="Enter the Location of the End Device" />
+                            </label>
+                                    <br>
                         </fieldset>
                         <input type="submit" value="create new fiberID" />
                     </form>
+                    <a href="/fibers/"><button>Back to Main</button></a>
                 </div>
             </main>
     </body>

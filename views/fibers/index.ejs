@@ -5,14 +5,10 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-
-
-
                 <div class="container-fluid"> 
                     <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col">
-                                <a href="/fibers/new"><button>Create A New fiberID</button></a>
                              <% for (fiber of fibers) { %>
                                  <article>
                                     <a href="/fibers/<%= fiber._id %>">

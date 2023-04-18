@@ -5,15 +5,40 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-                <div>
-
-                    <article>
-                        <h2>
-                            <%= fiber.name %> - <%= fiber.isItWorking ? "Working" : "Not Working" %>
-                        </h2>
-                        <h3>
-                            <%= fiber.color %>
-                        </h3>
+                <div class="jumbotron text-center">
+                    <h1> <%= fiber.fiberID %> - <%= fiber.isItWorking ? "Working" : "Not Working" %></h1> 
+                    <br>
+                    <h1><%= fiber.TypeOfFiber %></h1>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <article>
+                                <h3>
+                                    <%= fiber.DeviceA %>
+                                </h3>
+                                <h3>
+                                    <%= fiber.TypeOfConnectorOfA %>
+                                </h3>
+                                <h3>
+                                    <%= fiber.locationOfDeviceA %>
+                                </h3>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4">
+                                <h3>
+                                    <%= fiber.DeviceB %>
+                                </h3>
+                                <h3>
+                                    <%= fiber.TypeOfConnectorOfB %>
+                                </h3>
+                                <h3>
+                                    <%= fiber.locationOfDeviceB %>
+                                </h3>
+                        </div>
+                    </div>
+                </div>
                         <a href="/fibers/<%= fiber._id %>/edit"><button>Edit</button></a>
                         <form action="/fibers/<%= fiber._id %>?_method=DELETE" method="POST">
                             <input type="submit" value="Delete" />
@@ -21,7 +46,7 @@
                         <a href="/fibers/"><button>Back to Main</button></a>
                     </article>
 
-                </div>
+
             </main>
     </body>
 

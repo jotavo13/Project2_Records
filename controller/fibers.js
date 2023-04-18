@@ -3,6 +3,12 @@ const Fiber  = require('../models/Fiber');
 const router = express.Router();
 
 
+// New
+router.get('/new', (req, res) => {
+    res.render("fibers/new.ejs")
+   })
+   
+
 // Post
 router.post('/', async (req, res) => {
 	req.body.isItWorknig = req.body.isItWorknig === 'on' ? true : false;
@@ -10,11 +16,6 @@ router.post('/', async (req, res) => {
 	res.redirect('/fibers');
 });
 
-
-// New
-router.get('/new', (req, res) => {
-    res.render("fibers/new.ejs")
-   })
    
    //edit
    router.get('/:id/edit', async (req, res) => {
