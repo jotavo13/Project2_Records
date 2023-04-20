@@ -1,12 +1,20 @@
 const express = require('express');
 const Fiber  = require('../models/Fiber');
 const router = express.Router();
+const mongoose = require("mongoose");
 
 
-// Summary
-router.get('/summary', (req, res) => {
- res.render('fibers/summary.ejs')
-})
+
+//==============ROUTES============================
+
+
+
+// // Summary
+// router.get('/summary', (req, res) => {
+//  res.render('fibers/summary.ejs')
+// })
+
+
 
 
 // New
@@ -17,6 +25,7 @@ router.get('/new', (req, res) => {
 
 // Post
 router.post('/', async (req, res) => {
+    console.log(req.body);
 	req.body.isItWorknig = req.body.isItWorknig === 'on' ? true : false;
 	const fiber = await Fiber.create(req.body);
 	res.redirect('/fibers');
@@ -35,6 +44,7 @@ router.post('/', async (req, res) => {
         res.render("fibers/index.ejs", {fibers});
     });
    
+
     // Show...show one fiber
     router.get('/:id', async (req, res) => {
         const fiber = await Fiber.findById(req.params.id);

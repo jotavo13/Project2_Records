@@ -1,10 +1,11 @@
 
 // import mongoose
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { DATABASE_URL } = require('../config');
 require("dotenv").config();
 
 // mongoose connect to url
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(DATABASE_URL);
 
 mongoose.connection.on("connected", () => {
     console.log("Mongoose connected to mongoDB")

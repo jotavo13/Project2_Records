@@ -13,6 +13,6 @@ const fiberSchema = new mongoose.Schema({
     isItWorknig: Boolean
 }, {timestamps: true})
 
-const Fiber = mongoose.model("Fiber", fiberSchema);
+const Fiber = mongoose.model("Fiber", fiberSchema, 'fibers' );
 
 module.exports = Fiber
