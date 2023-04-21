@@ -8,19 +8,40 @@
                 <div>
                     <form action="/fibers/<%= fiber._id %>?_method=PUT" method="post">
                         <fieldset>
-                            <legend>Edit a <%= fiber.name %>
+                            <legend>Edit a <%= fiber.fiberID %>
                             </legend>
                             <label>
-                                NAME:<input type="text" name="name" value="<%= fiber.name %>" placeholder="enter fiber name" />
+                               FiberID :<input type="text" name="FiberID" value="<%= fiber.FiberID %>" placeholder="enter fiber id" />
                             </label>
                             <label>
-                                COLOR:<input type="text" name="color" value="<%= fiber.color %>" placeholder="enter fiber name" />
+                                DeviceA:<input type="text" name="DeviceA" value="<%= fiber.DeviceA %>" placeholder="enter the staring Device A" />
                             </label>
                             <label>
-                                READY TO EAT:<input type="checkbox" name="readyToEat" <%=fiber.readyToEat ? "checked" : "" %> />
+                                TypeOfConnectorOfA :<input type="text" name="TypeOfConnectorOfA" value="<%= fiber.TypeOfConnectorOfA %>" placeholder="enter the connector type of Device A" />
+                             </label>
+                             <label>
+                                locationOfDeviceA:<input type="text" name="locationOfDeviceA" value="<%= fiber.locationOfDeviceA %>" placeholder="enter the physical location" />
+                             </label>
+                             <label>
+                                TypeOfFiber :<input type="text" name="TypeOfFiber" value="<%= fiber.TypeOfFiber %>" placeholder="enter the TypeOfFiber" />
+                             </label>
+                             <label>
+                                IMG :<input type="image" name="IMG" value="<%= fiber.IMG %>" placeholder="enter the ImageURL" />
+                             </label>
+                             <label>
+                                DeviceB:<input type="text" name="DeviceB" value="<%= fiber.DeviceB %>" placeholder="enter the staring Device B" />
+                             </label>
+                             <label>
+                                TypeOfConnectorOfB :<input type="text" name="TypeOfConnectorOfB" value="<%= fiber.TypeOfConnectorOfB %>" placeholder="enter the connector type of Device B" />
+                             </label>
+                             <label>
+                                locationOfDeviceB:<input type="text" name="locationOfDeviceB" value="<%= fiber.locationOfDeviceB %>" placeholder="enter the physical location" />
+                             </label>
+                            <label>
+                                Is This Active :<input type="checkbox" name="isItWorking" <%=fiber.isItWorking ? "checked" : "" %> />
                             </label>
                         </fieldset>
-                        <input type="submit" value="Update <%= fiber.name %>" />
+                        <input type="submit" value="Update <%= fiber.fiberID %>" />
                     </form>
                 </div>
             </main>

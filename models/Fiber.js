@@ -7,10 +7,11 @@ const fiberSchema = new mongoose.Schema({
     TypeOfConnectorOfA: String,
     locationOfDeviceA:String,
     TypeOfFiber:String,
+    IMG:String,
     DeviceB: String,
     TypeOfConnectorOfB: String,
     locationOfDeviceB:String,
-    isItWorknig: Boolean
+    isItWorking: Boolean
 }, {timestamps: true})
 
 const Fiber = mongoose.model("Fiber", fiberSchema, 'fibers' );

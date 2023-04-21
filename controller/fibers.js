@@ -26,7 +26,7 @@ router.get('/new', (req, res) => {
 // Post
 router.post('/', async (req, res) => {
     console.log(req.body);
-	req.body.isItWorknig = req.body.isItWorknig === 'on' ? true : false;
+	req.body.isItWorking = req.body.isItWorking === 'on' ? true : false;
 	const fiber = await Fiber.create(req.body);
 	res.redirect('/fibers');
 });
@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
 // Index...show all fiber
     router.get('/', async (req, res) => {
         const fibers = await Fiber.find({});
+        console.log(fibers)
         res.render("fibers/index.ejs", {fibers});
     });
    
@@ -61,7 +62,7 @@ router.post('/', async (req, res) => {
     // Update
     router.put('/:id', async (req, res) => {
         const id = req.params.id;
-        req.body.isItWorknig = req.body.isItWorknig === 'on' ? true : false;
+        req.body.isIt = req.body.isIt === 'on' ? true : false;
         const fiber = await Fiber.findByIdAndUpdate(id, req.body, {
             new: true,
         });

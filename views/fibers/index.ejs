@@ -11,14 +11,10 @@
                             <div class="col">
                              <% for (fiber of fibers) { %>
                                  <article>
-                                    <a href="/fibers/<%= fiber._id %>">
-                           
                                          <h2> 
-                                              <%= fiber.fiberID %> - <%= fiber.isItWorking ? "Usable" : "Already In Used" %>
+                                            <a href="/fibers/<%= fiber._id %>"><%= fiber.fiberID %></a> -  <%= fiber.isItWorking ? "Usable" : "Is Active" %>
                                          </h2>
-                                     </a>
                                  </article>
-
                              <% } %>
                             </div>
                         </div>
