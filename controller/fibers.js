@@ -66,7 +66,7 @@ router.post('/', async (req, res) => {
         const fiber = await Fiber.findByIdAndUpdate(id, req.body, {
             new: true,
         });
-        res.redirect('/fibers');
+        res.redirect('/fibers/');
     });
 
 

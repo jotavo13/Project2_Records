@@ -12,7 +12,7 @@
                              <% for (fiber of fibers) { %>
                                  <article>
                                          <h2> 
-                                            <a href="/fibers/<%= fiber._id %>"><%= fiber.fiberID %></a> -  <%= fiber.isItWorking ? "Usable" : "Is Active" %>
+                                            <a href="/fibers/<%= fiber._id %>"><%= fiber.fiberID %></a> -  <%= fiber.isItWorking ? "Is Active" : "Not Active" %>
                                          </h2>
                                  </article>
                              <% } %>
