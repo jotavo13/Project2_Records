@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
     // Update
     router.put('/:id', async (req, res) => {
         const id = req.params.id;
-        req.body.isIt = req.body.isIt === 'on' ? true : false;
+        req.body.isItWorking = req.body.isItWorking === 'on' ? true : false;
         const fiber = await Fiber.findByIdAndUpdate(id, req.body, {
             new: true,
         });
